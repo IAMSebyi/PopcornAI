@@ -1,0 +1,137 @@
+/* Main content shift */
+.main-content {
+    transition: transform 0.5s ease;
+}
+
+.main-content.shift-left {
+    transform: translateX(-20%); /* Shift the main content to the left */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scroll when form is open */
+    background-image: url('../assets/index_background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header */
+header .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: bold;
+    font-size: 8rem;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+.join-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    font-size: 3rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5rem;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: black;
+    color: #a41d05;
+}
+
+/* Form Popup */
+.form-popup {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.5s ease;
+}
+
+.form-popup.active {
+    right: 0;
+}
+
+.form-container {
+    padding: 40px;
+    color: black;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #800000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #5e0000;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-text a {
+    color: #800000;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}

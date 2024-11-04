@@ -1,0 +1,229 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+body {
+    background-color: #050000;
+    background-image: url('../assets/home_background.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+/* Header and Logo */
+.header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Profile, Movies, and Shows Buttons */
+.header-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.header-buttons button {
+    height: 2em;
+    width: 4em;
+    border: none;
+    border-radius: 10em;
+    background-color: #a41d05;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.header-buttons button:hover {
+    background-color: #c5301e;
+}
+
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    text-align: center;
+}
+
+/* Movie Title (Below Card) */
+.movie-title {
+    margin-top: 20px;
+    font-family: 'Arial';
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Movie Card */
+.movie-card {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.8s;
+    cursor: pointer;
+    border: 2px solid #a41d05;
+    border-radius: 8px;
+}
+
+.movie-card .card-front,
+.movie-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.movie-card .card-front {
+    background-color: #222;
+}
+
+.movie-card .card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.movie-card .card-back {
+    background-color: #333;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.movie-card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Swiping Buttons */
+.swipe-buttons {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    top: 60%;
+}
+
+.swipe-button {
+    width: 50px;
+    height: 50px;
+    background-color: #a41d05;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.swipe-button:hover {
+    background-color: #c5301e;
+}
+
+/* Icon Styles */
+.icon {
+    color: white;
+    font-size: 20px;
+}
+
+.arrow-up::before {
+    content: "↑";
+}
+
+.arrow-down::before {
+    content: "↓";
+}
+
+.arrow-left::before {
+    content: "←";
+}
+
+.arrow-right::before {
+    content: "→";
+}
+
+.double-arrow::before {
+    content: "↔";
+}
+
+.star::before {
+    content: "★";
+}
+
+/* Button Positions */
+.swipe-button.top-left { position: absolute; top: -440px; left: -160px; }
+.swipe-button.top-center { position: absolute; top: -460px; }
+.swipe-button.top-right { position: absolute; top: -440px; right: -160px; }
+.swipe-button.bottom-left { position: absolute; bottom: -240px; left: -160px; }
+.swipe-button.bottom-center { position: absolute; bottom: -260px; }
+.swipe-button.bottom-right { position: absolute; bottom: -240px; right: -160px; }
+
+/* Keyframe Animations */
+@keyframes moveUp {
+    to { transform: translateY(-150%) rotate(-15deg); opacity: 0; }
+}
+
+@keyframes moveDown {
+    to { transform: translateY(150%) rotate(15deg); opacity: 0; }
+}
+
+@keyframes moveRight {
+    to { transform: translateX(150%) rotate(10deg); opacity: 0; }
+}
+
+@keyframes moveLeft {
+    to { transform: translateX(-150%) rotate(-10deg); opacity: 0; }
+}
+
+@keyframes heartDisappear {
+    to { transform: scale(0.1) rotate(360deg); opacity: 0; }
+}
+
+@keyframes backToPack {
+    from { transform: translateX(-50px); opacity: 0.5; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Animation Classes */
+.animate-up { animation: moveUp 0.6s forwards; }
+.animate-down { animation: moveDown 0.6s forwards; }
+.animate-right { animation: moveRight 0.6s forwards; }
+.animate-left { animation: moveLeft 0.6s forwards; }
+.animate-heart { animation: heartDisappear 0.8s forwards; }
+.animate-reset { animation: backToPack 0.3s forwards; }
+

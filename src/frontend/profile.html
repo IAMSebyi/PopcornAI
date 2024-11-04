@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopcornAI Profile</title>
+    <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+    <header class="header">
+        <h1>PopcornAI</h1>
+        <nav>
+            <a href="home.html" class="nav-link">Cards</a>
+            <a href="index.html" class="nav-link">Log out</a>
+        </nav>
+    </header>
+    <main class="profile-container">
+        <section class="profile-info">
+            <div class="profile-logo"></div>
+            <div class="profile-details">
+                <h2>Username</h2>
+                <p class="profile-preferences">♡ Fav. Gen. 1, Fav. Gen. 2, Fav. Gen. 3, Mov/Sh, Lang., Period, Indie/Pop ♡</p>
+                <ul class="prompts">
+                    <li>Prompt GPT #1</li>
+                    <li>Prompt GPT #2</li>
+                    <li>Prompt GPT #3</li>
+                    <li>Prompt GPT #4</li>
+                </ul>
+            </div>
+        </section>
+        <section class="action-buttons">
+            <button id="superlikes" class="action-button">SUPERLIKES</button>
+            <div id="superlikes-content" class="card-slider hidden">
+                <div class="small-card"></div>
+                <div class="main-card"></div>
+                <div class="main-card"></div>
+                <div class="small-card"></div>
+            </div>
+            <button id="likes" class="action-button">LIKES</button>
+            <div id="likes-content" class="card-slider hidden">
+                <div class="small-card"></div>
+                <div class="main-card"></div>
+                <div class="main-card"></div>
+                <div class="small-card"></div>
+            </div>
+            <button id="would" class="action-button">WOULD</button>
+            <div id="would-content" class="card-slider hidden">
+                <div class="small-card"></div>
+                <div class="main-card"></div>
+                <div class="main-card"></div>
+                <div class="small-card"></div>
+            </div>
+        </section>        
+    </main>
+    <script src="scripts/profile.js"></script>
+</body>
+</html>

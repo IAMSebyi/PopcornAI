@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopcornAI - Discover movies and series tailored to your taste!</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <div class="main-content" id="mainContent">
+        <header>
+            <div class="logo">PopcornAI</div>
+        </header>
+
+        <section class="hero">
+            <button class="join-button" id="joinButton">JOIN</button>
+        </section>
+    </div>
+
+    <section class="form-popup" id="formPopup">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="login-text">Already have an account? <a href="login.html" id="loginLink">Log In!</a></p>
+        </div>
+    </section>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

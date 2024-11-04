@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopcornAI - Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <!-- Header and Logo -->
+    <header class="header">
+        <div class="logo">PopcornAI</div>
+        <!-- Profile, Movies, and Shows Buttons -->
+        <div class="header-buttons">
+            <button id="profile-btn" onclick="goToProfile()">Profile</button>
+            <button id="movies-btn">Movies</button>
+            <button id="shows-btn">Shows</button>
+        </div>
+    </header>
+
+    <!-- Movie Card Container -->
+    <div class="card-container">
+        <div class="movie-card" onclick="flipCard(this)">
+            <div class="card-front">
+                <img src="poster-placeholder.jpg" alt="Movie Poster">
+            </div>
+            <div class="card-back">
+                <p>Description: A thrilling movie with twists and turns.</p>
+                <p>Rating: 8.5/10</p>
+                <p>Popularity: High</p>
+            </div>
+        </div>
+        <div class="movie-title">Movie Title</div>
+    </div>
+
+    <!-- Swiping Buttons -->
+    <div class="swipe-buttons">
+        <button class="swipe-button top-left" onclick="swipe('dislike')">
+            <div class="icon arrow-down"></div>
+        </button>
+        <button class="swipe-button top-center" onclick="swipe('super-like')">
+            <div class="icon star"></div>
+        </button>
+        <button class="swipe-button top-right" onclick="swipe('like')">
+            <div class="icon arrow-up"></div>
+        </button>
+        <button class="swipe-button bottom-left" onclick="swipe('not-interested')">
+            <div class="icon arrow-left"></div>
+        </button>
+        <button class="swipe-button bottom-center" onclick="swipe('neutral')">
+            <div class="icon double-arrow"></div>
+        </button>
+        <button class="swipe-button bottom-right" onclick="swipe('interested')">
+            <div class="icon arrow-right"></div>
+        </button>
+    </div>
+
+    <script src="scripts/home.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+/* General Reset */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #050000; /* Dark gray background */
+    color: #a41d05; /* Color for text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Login container */
+.login-container {
+    padding: 60px;
+    border-radius: 10px;
+    width: 500px; /* Increased width for the form */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centering text */
+}
+
+/* Header */
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: bold;
+    font-size: 6rem; /* Adjusted size */
+    color: #ffffff;
+    margin-bottom: 20px; /* Spacing below the logo */
+}
+
+/* Form container */
+.form-container {
+    display: flex;
+    flex-direction: column; /* Flex column for stacking */
+    align-items: center; /* Centering elements */
+    gap: 20px; /* Space between items */
+}
+
+/* Form title */
+.form-container h2 {
+    font-size: 2.5rem; /* Adjusted size */
+    margin-bottom: 20px; /* Spacing below the title */
+}
+
+/* Form styles */
+.form-container form {
+    display: flex;
+    flex-direction: column; /* Stacked layout */
+    gap: 15px;
+    width: 100%; /* Full width of container */
+}
+
+/* Input fields */
+.form-container input {
+    padding: 12px; /* Increased padding */
+    font-size: 1rem;
+    border: 1.4px solid #a41d05; /* Changed border color */
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text for inputs */
+}
+
+/* Button */
+.form-container button {
+    padding: 12px; /* Increased padding */
+    font-size: 1.2rem;
+    color: white;
+    background-color: #a41d05; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #800000; /* Darker shade for hover */
+}
+
+.form-container p {
+    color: #ffffff;
+}
+
+/* Signup text */
+.signup-text {
+    margin-top: 10px;
+}
+
+.signup-text a {
+    color: #a41d05; /* Link color */
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
