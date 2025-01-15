@@ -20,42 +20,56 @@
 
     <!-- Movie Card Container -->
     <div class="card-container">
+        <!-- Movie Card -->
         <div class="movie-card" onclick="flipCard(this)">
             <div class="card-front">
+                <!-- Movie Poster -->
                 <img src="poster-placeholder.jpg" alt="Movie Poster">
             </div>
             <div class="card-back">
-                <p>Description: A thrilling movie with twists and turns.</p>
-                <p>Rating: 8.5/10</p>
-                <p>Popularity: High</p>
+                <!-- Movie Description -->
+                <div class="description">
+                    <p>Description: Peaky Blinders is a crime drama centred on a family of mixed Irish Traveller and Romani origins based in Birmingham, England, starting in 1919, several months after the end of the First World War.</p>
+                </div>
+                <!-- Movie Details -->
+                <div class="details">
+                    <p>Rating: 9.5/10</p>
+                    <p>Popularity: High</p>
+                </div>
             </div>
         </div>
-        <div class="movie-title">Movie Title</div>
+        <!-- Movie Title -->
+        <div class="movie-title">Peaky Blinders</div>
     </div>
 
     <!-- Swiping Buttons -->
     <div class="swipe-buttons">
+        <!-- Dislike Button -->
         <button class="swipe-button top-left" onclick="swipe('dislike')">
-            <div class="icon arrow-down"></div>
+            <span class="icon arrow-down"></span>
         </button>
+        <!-- Super Like Button -->
         <button class="swipe-button top-center" onclick="swipe('super-like')">
-            <div class="icon star"></div>
+            <span class="icon star"></span>
         </button>
+        <!-- Like Button -->
         <button class="swipe-button top-right" onclick="swipe('like')">
-            <div class="icon arrow-up"></div>
+            <span class="icon arrow-up"></span>
         </button>
+        <!-- Not Interested Button -->
         <button class="swipe-button bottom-left" onclick="swipe('not-interested')">
-            <div class="icon arrow-left"></div>
+            <span class="icon arrow-left"></span>
         </button>
+        <!-- Neutral Button -->
         <button class="swipe-button bottom-center" onclick="swipe('neutral')">
-            <div class="icon double-arrow"></div>
+            <span class="icon double-arrow"></span>
         </button>
+        <!-- Interested Button -->
         <button class="swipe-button bottom-right" onclick="swipe('interested')">
-            <div class="icon arrow-right"></div>
+            <span class="icon arrow-right"></span>
         </button>
     </div>
 
     <script src="scripts/home.js"></script>
 </body>
 </html>
-

@@ -8,8 +8,8 @@
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #050000; /* Dark gray background */
-    color: #a41d05; /* Color for text */
+    background-color: #050000;
+    color: #a41d05;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,9 +20,9 @@ body {
 .login-container {
     padding: 60px;
     border-radius: 10px;
-    width: 500px; /* Increased width for the form */
+    width: 500px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Centering text */
+    text-align: center;
 }
 
 /* Header */
@@ -33,49 +33,49 @@ header .logo {
     font-family: 'Arial';
     font-style: italic;
     font-weight: bold;
-    font-size: 6rem; /* Adjusted size */
+    font-size: 6rem;
     color: #ffffff;
-    margin-bottom: 20px; /* Spacing below the logo */
+    margin-bottom: 20px;
 }
 
 /* Form container */
 .form-container {
     display: flex;
-    flex-direction: column; /* Flex column for stacking */
-    align-items: center; /* Centering elements */
-    gap: 20px; /* Space between items */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
 }
 
 /* Form title */
 .form-container h2 {
-    font-size: 2.5rem; /* Adjusted size */
-    margin-bottom: 20px; /* Spacing below the title */
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
 }
 
 /* Form styles */
 .form-container form {
     display: flex;
-    flex-direction: column; /* Stacked layout */
+    flex-direction: column; 
     gap: 15px;
-    width: 100%; /* Full width of container */
+    width: 100%; 
 }
 
 /* Input fields */
 .form-container input {
-    padding: 12px; /* Increased padding */
+    padding: 12px; 
     font-size: 1rem;
-    border: 1.4px solid #a41d05; /* Changed border color */
+    border: 1.4px solid #a41d05; 
     border-radius: 5px;
-    background-color: transparent; /* Transparent background */
-    color: white; /* White text for inputs */
+    background-color: transparent; 
+    color: white; 
 }
 
 /* Button */
 .form-container button {
-    padding: 12px; /* Increased padding */
+    padding: 12px;
     font-size: 1.2rem;
     color: white;
-    background-color: #a41d05; /* Button background color */
+    background-color: #a41d05;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -83,7 +83,7 @@ header .logo {
 }
 
 .form-container button:hover {
-    background-color: #800000; /* Darker shade for hover */
+    background-color: #800000;
 }
 
 .form-container p {
@@ -96,10 +96,60 @@ header .logo {
 }
 
 .signup-text a {
-    color: #a41d05; /* Link color */
+    color: #a41d05;
     text-decoration: none;
 }
 
 .signup-text a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 30px;
+        border-radius: 8px;
+    }
+
+    header .logo {
+        font-size: 4rem; 
+        margin-bottom: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 2rem;
+    }
+
+    .form-container input,
+    .form-container button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .form-container {
+        gap: 10px;
+    }
+
+    .signup-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media query for very small screens (phones under 480px) */
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 3.5rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .form-container button {
+        font-size: 1rem;
+    }
 }

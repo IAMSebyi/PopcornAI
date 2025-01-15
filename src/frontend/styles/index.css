@@ -4,7 +4,7 @@
 }
 
 .main-content.shift-left {
-    transform: translateX(-20%); /* Shift the main content to the left */
+    transform: translateX(-20%);
 }
 
 /* General Reset */
@@ -17,7 +17,7 @@
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Prevent scroll when form is open */
+    overflow: hidden;
     background-image: url('../assets/index_background.png');
     background-size: cover;
     background-position: center;
@@ -29,14 +29,13 @@ header .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 30%;
-    font-family: 'Arial';
+    top: 25%;
     font-style: italic;
     font-weight: bold;
-    font-size: 8rem;
+    font-size: 10rem;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
 }
 
 /* Hero Section */
@@ -54,8 +53,8 @@ header .logo {
     left: 50%;
     transform: translateX(-50%);
     top: 50%;
-    font-size: 3rem;
-    padding: 15px 30px;
+    font-size: 4rem;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 5rem;
     background-color: white;
@@ -74,11 +73,12 @@ header .logo {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 35%;
+    width: 100%;
+    max-width: 30rem;
     height: 100%;
     background-color: white;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-    transition: right 0.5s ease;
+    transition: right 0.5s ease, background-color 0.5s ease;
 }
 
 .form-popup.active {
@@ -86,36 +86,37 @@ header .logo {
 }
 
 .form-container {
-    padding: 40px;
+    padding: 2rem;
     color: black;
 }
 
 .form-container h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .form-container form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .form-container input {
-    padding: 10px;
+    padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 .form-container button {
-    padding: 10px;
+    padding: 0.8rem;
     font-size: 1.2rem;
     color: white;
     background-color: #800000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .form-container button:hover {
@@ -124,7 +125,7 @@ header .logo {
 
 .login-text {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0.5rem;
 }
 
 .login-text a {
@@ -134,4 +135,25 @@ header .logo {
 
 .login-text a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .join-button {
+        font-size: 2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    header .logo {
+        font-size: 4rem;
+        top: 35%;
+    }
+
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-container button {
+        font-size: 1rem;
+    }
 }

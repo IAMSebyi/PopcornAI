@@ -46,6 +46,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .profile-info {
@@ -97,9 +98,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
+/* Buttons styling */
 .action-button {
     width: 100%;
     padding: 20px;
@@ -159,7 +160,7 @@ body {
     padding: 10px;
     justify-content: center;
     align-items: center;
-    animation: slideIn 0.4s ease-out; /* Slide-in animation */
+    animation: slideIn 0.4s ease-out;
 }
 
 #superlikes-content.card-slider {
@@ -197,4 +198,103 @@ body {
 .small-card:hover {
     transform: scale(1.1);
     opacity: 1;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 1024px) {
+    .profile-info, .action-buttons {
+        width: 45%;
+        height: auto;
+    }
+
+    .profile-details h2 {
+        font-size: 30px;
+    }
+
+    .profile-preferences {
+        font-size: 12px;
+    }
+
+    .prompts {
+        font-size: 16px;
+    }
+
+    .action-button {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 24px;
+    }
+
+    .profile-info, .action-buttons {
+        width: 80%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .profile-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details h2 {
+        font-size: 24px;
+    }
+
+    .profile-preferences {
+        font-size: 12px;
+    }
+
+    .prompts {
+        font-size: 14px;
+    }
+
+    .action-button {
+        font-size: 30px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        font-size: 30px;
+        padding: 15px;
+        margin-left: 20px;
+    }
+
+    .profile-info, .action-buttons {
+        width: 100%;
+        height: auto;
+    }
+
+    .profile-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h2 {
+        font-size: 20px;
+    }
+
+    .profile-preferences {
+        font-size: 10px;
+    }
+
+    .prompts {
+        font-size: 12px;
+    }
+
+    .action-button {
+        font-size: 24px;
+        padding: 12px;
+    }
 }
