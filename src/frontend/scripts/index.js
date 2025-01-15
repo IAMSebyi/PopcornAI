@@ -16,6 +16,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Restore form data from LocalStorage
+    const restoreFormData = () => {
+        usernameInput.value = localStorage.getItem("signupUsername") || "";
+        emailInput.value = localStorage.getItem("signupEmail") || "";
+        passwordInput.value = localStorage.getItem("signupPassword") || "";
+        confirmPasswordInput.value = localStorage.getItem("signupConfirmPassword") || "";
+    };
+
+    // Save form data to LocalStorage
+    const saveFormData = () => {
+        localStorage.setItem("signupUsername", usernameInput.value);
+        localStorage.setItem("signupEmail", emailInput.value);
+        localStorage.setItem("signupPassword", passwordInput.value);
+        localStorage.setItem("signupConfirmPassword", confirmPasswordInput.value);
+    };
+
+    // Call restore on page load
+    restoreFormData();
+
+    // Add event listener for form input changes
+    signupForm.addEventListener("input", saveFormData);
+
     signupForm.addEventListener("submit", (event) => {
         event.preventDefault();
 

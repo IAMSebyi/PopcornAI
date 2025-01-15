@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
@@ -10,11 +10,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'  # Store sessions in the filesystem
 app.secret_key = 'supersecretkey'  # Replace with a secure secret key
+app.config['SESSION_TYPE'] = 'filesystem' 
+app.config['SESSION_USE_SIGNER'] = True
+app.config['SESSION_PERMANENT'] = False
+
+Session(app)
 
 # Initialize extensions
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-CORS(app)
+CORS(app, supports_credentials=True)
 Session(app)
 
 # User model
@@ -83,7 +88,22 @@ def logout():
     session.clear()  # Clear the session
     return jsonify({"success": True, "message": "Logged out successfully!"}), 200
 
-# Check if user is logged in (optional route for session verification)
+# Decorator to protect routes
+def login_required(f):
+    from functools import wraps
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user_id' not in session:
+            return jsonify({"success": False, "message": "Unauthorized"}), 401
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route('/home', methods=['GET'])
+@login_required
+def home():
+    # Serve the home page only if user is logged in
+    return app.send_static_file('home.html')
+
 @app.route('/session', methods=['GET'])
 def session_status():
     if 'user_id' in session:

@@ -1,3 +1,26 @@
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Check session status
+//     fetch('/session', {
+//         method: 'GET',
+//         credentials: 'include' // Include cookies for session handling
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.loggedIn) {
+//             // Display the username on the page
+//             document.getElementById('username-display').textContent = data.username;
+//         } else {
+//             // Redirect to login page if not logged in
+//             window.location.href = 'login.html';
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error checking session:', error);
+//         window.location.href = 'login.html';
+//     });
+// });
+
+
 // Example Movie Data
 const movies = [
     {
@@ -27,7 +50,8 @@ let currentMovieIndex = 0;
 
 // Profile Button Action
 function goToProfile() {
-    alert("Navigating to Profile..."); // Replace with actual navigation code later
+    // Redirect to profile page
+    window.location.href = 'profile.html';
 }
 
 // Card Flip
