@@ -84,6 +84,18 @@ function loadNewMovie() {
 
     // Reset the card's position and remove animations
     card.className = "movie-card";
+
+    // Add random rating (using Math)
+    const randomRating = (Math.random() * 5 + 5).toFixed(1); // Between 5.0 and 10.0
+    backRating.innerText = `Rating: ${randomRating}/10`;
+    
+    // Update card background color (random color change)
+    card.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    
+    // Add a release date (using Date)
+    const currentDate = new Date();
+    const releaseYear = currentDate.getFullYear();
+    backDescription.innerText += `\nReleased: ${releaseYear}`;
 }
 
 // Swiping Actions

@@ -38,6 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add event listener for form input changes
     signupForm.addEventListener("input", saveFormData);
 
+    // Validate email using regular expression
+    const validateEmail = (email) => {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    };
+
+    // Validate password with conditions
+    const validatePassword = (password) => {
+        const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        return passwordRegex.test(password);
+    };
+
     signupForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -47,6 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
             password: document.getElementById("password").value,
             confirmPassword: document.getElementById("confirm-password").value,
         };
+
+        // Validate email
+        if (!validateEmail(email)) {
+            emailError.textContent = "Please enter a valid email address!";
+            return;
+        } else {
+            emailError.textContent = "";
+        }
+
+        // Validate password
+        if (!validatePassword(password)) {
+            passwordError.textContent = "Password must be at least 8 characters long, contain a number, a letter, and a special character!";
+            return;
+        } else {
+            passwordError.textContent = "";
+        }
 
         if (formData.password !== formData.confirmPassword) {
             alert("Passwords do not match!");
