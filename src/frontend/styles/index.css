@@ -138,7 +138,7 @@ header .logo {
 }
 
 /* Responsive Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .join-button {
         font-size: 2rem;
         padding: 0.8rem 1.5rem;
@@ -147,6 +147,26 @@ header .logo {
     header .logo {
         font-size: 4rem;
         top: 35%;
+    }
+
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-container button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-height: 1080px) and (min-width: 1000px) {
+    .join-button {
+        font-size: 3rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    header .logo {
+        font-size: 8rem;
+        top: 20%;
     }
 
     .form-container h2 {
